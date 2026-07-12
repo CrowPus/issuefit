@@ -33,8 +33,14 @@ services:
   migrate:
     build: .
     image: issuefit-app:latest
-    command: pnpm --filter @issuefit/database db:migrate
+    # Checks raw TCP connectivity to Postgres first (see scripts/wait-for-postgres.sh)
+    # so an unreachable host/closed port is reported clearly, since drizzle-kit's
+    # own spinner UI otherwise swallows the real connection error in Docker logs.
+    # CI=true asks drizzle-kit to skip interactive rendering for the same reason.
+    command: sh -c "bash scripts/wait-for-postgres.sh && CI=true pnpm --filter @issuefit/database db:migrate"
     environment:
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT:-5432}/${POSTGRES_DB}
     restart: "no"
 

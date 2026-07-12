@@ -165,7 +165,15 @@ jobs:
 
                 df -h /
 
-                sudo docker compose -f "$COMPOSE_FILE" up -d --build
+                if ! sudo docker compose -f "$COMPOSE_FILE" up -d --build; then
+
+                echo "Deploy failed — migrate and pgbouncer logs:"
+
+                sudo docker compose -f "$COMPOSE_FILE" logs --tail 100 migrate pgbouncer || true
+
+                exit 1
+
+                fi
 
                 sudo docker compose -f "$COMPOSE_FILE" ps
 
