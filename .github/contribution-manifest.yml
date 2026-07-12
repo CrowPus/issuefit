@@ -1,0 +1,21 @@
+version: 1
+
+project:
+  externalContributions: true
+  aiPolicy: disclosed-assistance
+  contributionGuide: CONTRIBUTING.md
+
+maintainerCapacity:
+  acceptingContributors: true
+  mentorshipAvailable: limited
+  expectedResponseDays: 5
+
+opportunities:
+  allowedTypes: [bug, testing, documentation, feature, refactor]
+  preferredSkills: [typescript, next.js, postgresql, drizzle, github, docker]
+  difficulty: [beginner, intermediate]
+
+qualityRequirements:
+  testsRequired: true
+  issueDiscussionRequired: true
+  draftPullRequestFirst: false

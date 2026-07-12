@@ -1,0 +1,25 @@
+{
+  "name": "@issuefit/worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "IssueFit background worker: scheduled synchronisation and recommendation jobs.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch --env-file-if-exists=../../.env src/main.ts",
+    "start": "node --env-file-if-exists=../../.env dist/main.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@issuefit/config": "workspace:*",
+    "@issuefit/database": "workspace:*",
+    "@issuefit/recommendations": "workspace:*",
+    "pino": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  }
+}

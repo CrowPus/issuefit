@@ -1,0 +1,39 @@
+{
+  "name": "@issuefit/recommendations",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared recommendation application service for web and worker runtimes.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./career-goal": {
+      "types": "./dist/career-goal.d.ts",
+      "default": "./dist/career-goal.js"
+    },
+    "./manifest-policy": {
+      "types": "./dist/manifest-policy.d.ts",
+      "default": "./dist/manifest-policy.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@issuefit/database": "workspace:*",
+    "@issuefit/recommendation-engine": "workspace:*",
+    "@issuefit/skills": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}

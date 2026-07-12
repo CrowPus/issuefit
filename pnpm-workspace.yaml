@@ -1,0 +1,47 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+# Single source of truth for dependency versions across the workspace.
+# Reference from package.json with "catalog:".
+catalog:
+  "@better-auth/drizzle-adapter": ^1.6.23
+  "@eslint/js": ^10.0.1
+  "@octokit/rest": ^22.0.1
+  better-auth: ^1.6.23
+  "@next/eslint-plugin-next": ^16.2.10
+  "@playwright/test": ^1.61.1
+  "@tailwindcss/postcss": ^4.3.2
+  "@types/node": ^26.1.1
+  "@types/pg": ^8.20.0
+  "@types/react": ^19.2.17
+  "@types/react-dom": ^19.2.3
+  dotenv: ^17.4.2
+  drizzle-kit: ^0.31.10
+  drizzle-orm: ^0.45.2
+  eslint: ^10.7.0
+  eslint-config-prettier: ^10.1.8
+  eslint-plugin-react-hooks: ^7.1.1
+  next: ^16.2.10
+  pg: ^8.22.0
+  pino: ^10.3.1
+  prettier: ^3.9.5
+  react: ^19.2.7
+  react-dom: ^19.2.7
+  react-icons: ^5.7.0
+  tailwindcss: ^4.3.2
+  tsx: ^4.23.0
+  # typescript-eslint supports typescript <6.1; stay on 5.9.x until the
+  # linting ecosystem supports the TypeScript 7 (native) line.
+  typescript: ^5.9.3
+  typescript-eslint: ^8.63.0
+  vitest: ^4.1.10
+  yaml: ^2.8.1
+  zod: ^4.4.3
+
+minimumReleaseAgeExclude:
+  - eslint@10.7.0

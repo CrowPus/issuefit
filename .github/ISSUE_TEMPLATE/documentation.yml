@@ -1,0 +1,22 @@
+name: Documentation issue
+description: Report missing, unclear, or incorrect documentation.
+labels: ["documentation"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Where is the documentation?
+      description: File path or URL, e.g. `README.md` or `docs/development/setup.md`.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: Optional — pull requests for documentation fixes are very welcome.

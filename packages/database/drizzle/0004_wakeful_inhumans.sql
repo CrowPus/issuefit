@@ -1,0 +1,21 @@
+CREATE TABLE "repositories" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"github_repository_id" bigint NOT NULL,
+	"owner" text NOT NULL,
+	"name" text NOT NULL,
+	"full_name" text NOT NULL,
+	"description" text,
+	"primary_language" text,
+	"stars_count" integer NOT NULL,
+	"open_issues_count" integer NOT NULL,
+	"is_active" boolean NOT NULL,
+	"activity_score" real NOT NULL,
+	"maintainer_responsiveness_score" real NOT NULL,
+	"curation_warnings" text[] DEFAULT '{}' NOT NULL,
+	"approved" boolean DEFAULT true NOT NULL,
+	"html_url" text NOT NULL,
+	"synced_at" timestamp with time zone NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "repositories_github_repository_id_unique" UNIQUE("github_repository_id")
+);

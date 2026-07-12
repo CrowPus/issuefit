@@ -1,0 +1,41 @@
+{
+  "name": "@issuefit/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "IssueFit web application: public pages and the developer dashboard.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "catalog:",
+    "@issuefit/config": "workspace:*",
+    "@issuefit/contribution-manifest": "workspace:*",
+    "@issuefit/database": "workspace:*",
+    "@issuefit/github": "workspace:*",
+    "@issuefit/issue-health": "workspace:*",
+    "@issuefit/recommendation-engine": "workspace:*",
+    "@issuefit/recommendations": "workspace:*",
+    "@issuefit/repository-health": "workspace:*",
+    "@issuefit/skills": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-icons": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  }
+}

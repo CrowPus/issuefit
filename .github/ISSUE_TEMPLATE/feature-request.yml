@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an improvement or new capability.
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the roadmap in the README first — the MVP scope is deliberately small.
+        Features outside the MVP scope need maintainer approval before implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem from a user's perspective, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Is this within the current MVP scope?
+      options:
+        - Yes, it supports an existing roadmap item
+        - No, it extends the scope
+        - Not sure
+    validations:
+      required: true
